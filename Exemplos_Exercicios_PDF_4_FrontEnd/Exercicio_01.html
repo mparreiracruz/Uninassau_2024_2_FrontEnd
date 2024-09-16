@@ -1,0 +1,83 @@
+<!--
+Slide 47 e 48
+
+Exercício 1
+
+Criar um script para solicitar o ano atual e o ano de nascimento – calcule a diferença.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+<title>Cálculo de Idade</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+}
+h1 {
+color: #333;
+}
+button, input {
+padding: 10px;
+margin: 5px;
+font-size: 16px;
+}
+button {
+background-color: #4CAF50; /* Verde */
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+button:hover {
+background-color: #45a049; /* Verde escuro */
+}
+button:active {
+background-color: #3e8e41; /* Tom mais escuro */
+}
+.resultado {
+margin-top: 20px;
+font-size: 20px;
+}
+</style>
+<script>
+function calcularIdade() {
+// Solicita o ano atual
+let anoAtual = parseInt(prompt("Digite o ano atual:"));
+if (isNaN(anoAtual)) {
+alert("Por favor, insira um ano válido.");
+return;
+}
+// Solicita o ano de nascimento
+let anoNascimento = parseInt(prompt("Digite seu ano de nascimento:"));
+if (isNaN(anoNascimento)) {
+alert("Por favor, insira um ano de nascimento válido.");
+return;
+}
+// Calcula a idade
+let idade = anoAtual - anoNascimento;
+// Valida a idade
+if (idade < 0) {
+alert("Você ainda não nasceu!");
+} else {
+alert("Sua idade é: " + idade + " anos.");
+}
+}
+</script>
+</head>
+<body>
+<h1>Cálculo de Idade</h1>
+<button onclick="calcularIdade()">Calcular Idade</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!--
+Slide 39
+
+Leia a nota do aluno. Se a nota for um número e for maior ou igual a 60,
+então o aluno está aprovado. Caso contrário, o aluno está reprovado.-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificação de Nota</title>
+<script>
+function verificarNota() {
+// Obtém o valor do campo de entrada
+let notaAluno = document.getElementById("nota").value;
+notaAluno = parseFloat(notaAluno); // Converte a entrada para número
+let resultado; // Variável para armazenar o resultado
+if (!isNaN(notaAluno)) { // Verifica se a entrada é um número
+if (notaAluno >= 60) {
+resultado = "Aprovado!";
+} else {
+resultado = "Reprovado!";
+}
+} else {
+resultado = "Por favor, insira um número válido para a nota.";
+}
+// Exibe o resultado na página
+document.getElementById("resultado").innerText = resultado;
+}
+</script>
+</head>
+<body>
+<h1>Verificação de Nota</h1>
+<label for="nota">Digite sua nota:</label>
+<input type="text" id="nota" placeholder="Ex: 85">
+<button onclick="verificarNota()">Verificar</button>
+<h2 id="resultado"></h2> <!-- Onde o resultado será exibido -->
+</body>
+</html>

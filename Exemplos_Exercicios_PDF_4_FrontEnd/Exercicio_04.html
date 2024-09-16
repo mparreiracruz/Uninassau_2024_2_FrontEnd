@@ -1,0 +1,90 @@
+<!--
+Slides 53 e 54
+
+Exercício 4
+
+(while, do...while e for): crie um script que seja capaz de gerar a tabuada de 
+qualquer número inteiro digitado pelo usuário. 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+<title>Tabuada de um Número</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+}
+h1 {
+color: #333;
+}
+button {
+background-color: #4CAF50; /* Verde */
+color: white;
+border: none;
+padding: 10px 15px;
+cursor: pointer;
+font-size: 16px;
+border-radius: 5px;
+transition: background-color 0.3s;
+margin: 5px;
+}
+button:hover {
+background-color: #45a049; /* Verde escuro */
+}
+button:active {
+background-color: #3e8e41; /* Tom mais escuro */
+}
+.resultado {
+margin-top: 20px;
+font-size: 20px;
+text-align: left;
+width: 200px; /* Largura fixa para o resultado */
+}
+</style>
+<script>
+function gerarTabuada() {
+let numero = parseInt(prompt("Digite um número inteiro para gerar a tabuada:"));
+if (isNaN(numero)) {
+alert("Por favor, insira um número válido.");
+return;
+}
+let resultado = "";
+// Usando while
+let i = 1;
+while (i <= 10) {
+resultado += `${numero} x ${i} = ${numero * i}\n`;
+i++;
+}
+resultado += "\n"; // Adiciona um espaço para separação
+// Usando do...while
+i = 1;
+do {
+resultado += `${numero} x ${i} = ${numero * i}\n`;
+i++;
+} while (i <= 10);
+resultado += "\n"; // Adiciona um espaço para separação
+// Usando for
+for (i = 1; i <= 10; i++) {
+resultado += `${numero} x ${i} = ${numero * i}\n`;
+}
+// Exibe o resultado
+alert(`Tabuada do ${numero}:\n\n${resultado}`);
+}
+</script>
+</head>
+<body>
+<h1>Gerador de Tabuada</h1>
+<button onclick="gerarTabuada()">Gerar Tabuada</button>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!--
+Slide 49 e 50
+
+Exercício 2
+
+Criar um script que peça dois valores ao usuário e a operação que ele deseja executar (+, -, *, 
+/). Execute a operação desejada e mostre o resultado na tela.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+<title>Calculadora Simples</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+}
+h1 {
+color: #333;
+}
+input {
+padding: 10px;
+margin: 5px;
+font-size: 16px;
+width: 100px;
+}
+button {
+background-color: #4CAF50; /* Verde */
+color: white;
+border: none;
+padding: 10px 15px;
+cursor: pointer;
+font-size: 16px;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+button:hover {
+background-color: #45a049; /* Verde escuro */
+}
+button:active {
+background-color: #3e8e41; /* Tom mais escuro */
+}
+.resultado {
+margin-top: 20px;
+font-size: 20px;
+}
+</style>
+<script>
+function calcular() {
+// Solicita os dois valores
+let valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+let valor2 = parseFloat(prompt("Digite o segundo valor:"));
+let operacao = prompt("Digite a operação desejada (+, -, *, /):");
+let resultado;
+// Verifica a operação e executa a correspondente
+switch (operacao) {
+case '+':
+resultado = valor1 + valor2;
+break;
+case '-':
+resultado = valor1 - valor2;
+break;
+case '*':
+resultado = valor1 * valor2;
+break;
+case '/':
+if (valor2 !== 0) {
+resultado = valor1 / valor2;
+} else {
+alert("Erro: Divisão por zero não é permitida.");
+return;
+}
+break;
+default:
+alert("Operação inválida. Por favor, insira uma operação válida (+, -, *, /).");
+return;
+}
+// Exibe o resultado
+alert("O resultado é: " + resultado);
+}
+</script>
+</head>
+<body>
+<h1>Calculadora Simples</h1>
+<button onclick="calcular()">Calcular</button>
+</body>
+</html>
